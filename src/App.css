@@ -1,0 +1,50 @@
+.App {
+  width: 100vw;
+  display: flex;
+  justify-content: center; 
+}
+
+.Container {
+  border: 1px dashed #f0f0f0;
+  border-radius: 8px;
+  margin: 24px;
+  padding: 16px;
+
+  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 0%), 0 6.7px 5.3px rgb(0 0 0 / 0%), 0 12.5px 10px rgb(0 0 0 / 1%), 0 22.3px 17.9px rgb(0 0 0 / 1%), 0 41.8px 33.4px rgb(0 0 0 / 1%), 0 100px 80px rgb(0 0 0 / 1%);
+}
+
+.FormContainer {
+  padding: 0 16px;
+}
+
+.AlertBtn {
+  width: 80px;
+}
+
+.Transactions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Transaction {
+  margin: 24px;
+  border: 1px dashed #f0f0f0;
+  border-radius: 4px;
+  padding: 8px 24px;
+}
+
+.TransactionTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.Transaction div {
+  margin: 8px 0;
+}
+
+.Footer {
+  text-align: center;
+}
