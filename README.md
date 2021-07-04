@@ -17,17 +17,17 @@
 
 ---
 
-Для работы с локальным блокчеином (если хочешь просто потестить), надо развернуть его у себя. Для этого загляни [сюда](https://ethereumdev.io/testing-your-smart-contract-with-existing-protocols-ganache-fork/, "О ganache-cli"). Тебе надо поставить MetaMask (расширение для хрома) и ganache-cli. Дальше думаю разберешься сам, ты ведь большой мальчик уже))
+Для работы с локальным блокчеином (если хочешь просто потестить), надо развернуть его у себя. Для этого загляни [сюда](https://ethereumdev.io/testing-your-smart-contract-with-existing-protocols-ganache-fork/ "О ganache-cli"). Тебе надо поставить MetaMask (расширение для хрома) и ganache-cli. Дальше думаю разберешься сам, ты ведь большой мальчик уже))
 
-Если что (по любым вопросам/советам/парвкам) пиши мне в [тг](https://t.me/sepezho/, "Мой тг").
-
----
-
-О процессе создания проекта я рассказал [тут](https://www.instagram.com/stories/highlights/17886966257204178/ "Хайлайт в инсте") и [тут](https://t.me/sepezho_log/758, "Тг пост 1") а еще [тут](https://t.me/sepezho_log/759, "Тг пост 2")
+Если что (по любым вопросам/советам/парвкам) пиши мне в [тг](https://t.me/sepezho/ "Мой тг").
 
 ---
 
-Created by [sepezho](httpы://sepezho.com/, "Обо мне") 2021
+О процессе создания проекта я рассказал [тут](https://www.instagram.com/stories/highlights/17886966257204178/ "Хайлайт в инсте") и [тут](https://t.me/sepezho_log/758 "Тг пост 1") а еще [тут](https://t.me/sepezho_log/759/ "Тг пост 2")
+
+---
+
+Created by [sepezho](https://sepezho.com/ "Обо мне") 2021
 
 
 
