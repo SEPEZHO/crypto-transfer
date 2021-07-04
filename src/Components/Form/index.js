@@ -43,27 +43,37 @@ const Form = (props) => {
 
   const sentTransaction = async () => {
     try {
+
       await window.ethereum.enable();
       const web3 = new Web3(window.ethereum);
+
+      // вытаскиваем последний блок из блокчейна (чтоб вытащить из него gasLimit)
       const block = await web3.eth.getBlock("latest");
 
+      // параметры для транзакции
       const options = {
         to: user.text,
         from: props.text,
+        // конвертер обратно из ETH в WEI
         value: web3.utils.toWei(transactionData.val, "ether"),
         gasPrice: web3.utils.toWei(transactionData.gwei, "ether"),
         gas: block.gasLimit,
       };
-
-      const hash = await web3.eth.sendTransaction(options);
-      console.log(hash);
+      
+      // производим транзакцию
+      const lastTransactionData= await web3.eth.sendTransaction(options);
+      
+      // далее обновляем данные пользователей (снова вызываю функцию, которая обновит балансы)
       props.getUserData();
       getUserData(user.text);
-      setTransactionsData([hash, ...transactionsData].slice(0, 6));
+      // закидываю последние данные о транзакции в историю
+      setTransactionsData([lastTransactionData, ...transactionsData].slice(0, 6));
+      // а историю храню в локалстор (да да да костыль... и что ты мне сделаешь?)
       localStorage.setItem(
         "TransactionsHistory",
-        JSON.stringify([hash, ...transactionsData].slice(0, 6))
+        JSON.stringify([lastTransactionData, ...transactionsData].slice(0, 6))
       );
+      // сообщение что все вна2ре четко
       message.success(
         "Done transaction! " + transactionData.val + "ETH has been sent!"
       );
