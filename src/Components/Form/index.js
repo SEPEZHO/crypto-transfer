@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Space, Button, Divider, Input, Alert, message } from "antd";
 import Web3 from "web3";
 
+import * as dayjs from 'dayjs'
+var relativeTime = require('dayjs/plugin/relativeTime')
+dayjs.extend(relativeTime)
+
 const Form = (props) => {
   const [user, setUser] = useState({ text: "", error: true });
   const [transactionData, setTransactionData] = useState({
@@ -33,10 +37,11 @@ const Form = (props) => {
   const sentSubmit = async () => {
     await window.ethereum.enable();
     const web3 = new Web3(window.ethereum);
-    const block = await web3.eth.getBlock("latest");
+    // const block = await web3.eth.getBlock("latest");
+    const gasPrice = await web3.eth.getGasPrice();
     setTransactionData({
       val: transactionData.val,
-      gwei: web3.utils.fromWei(block.gasUsed + "", "ether"),
+      gwei: web3.utils.fromWei(gasPrice, "ether"),
       showAlert: true,
     });
   };
@@ -59,9 +64,10 @@ const Form = (props) => {
         gasPrice: web3.utils.toWei(transactionData.gwei, "ether"),
         gas: block.gasLimit,
       };
-      
+      console.log(options)
       // производим транзакцию
-      const lastTransactionData= await web3.eth.sendTransaction(options);
+      const lastTransactionData = await web3.eth.sendTransaction(options);
+      lastTransactionData.time = dayjs()
       
       // далее обновляем данные пользователей (снова вызываю функцию, которая обновит балансы)
       props.getUserData();
@@ -100,7 +106,7 @@ const Form = (props) => {
       showAlert: false,
     });
   };
-
+  console.log(transactionsData)
   return (
     <div className="FormContainer">
       <p>✔ Connected!</p>
@@ -203,6 +209,9 @@ const Form = (props) => {
           <div className="Transactions">
             {transactionsData.map((e) => (
               <div className="Transaction">
+                <span className="TransactionTitle">
+                  {dayjs().to(dayjs(e.time))}
+                </span>
                 <span className="TransactionTitle">
                   --- Block number: {e.blockNumber} ---
                 </span>
