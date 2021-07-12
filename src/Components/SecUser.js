@@ -7,7 +7,7 @@ dayjs.extend(require("dayjs/plugin/relativeTime"));
 const SecUser = (props) => (
 	<div className="SecUser">
 		<p>
-			Transfer to:
+			Transfer to (sec user):
 			<br />
 			<Input
 				placeholder="0xbCc210E4...f3e5F"
@@ -20,16 +20,16 @@ const SecUser = (props) => (
 		{!props.secUser.error ? (
 			<div>
 				<p>
-					User transfer to hash: {props.secUser.text.slice(0, 10)}...
+					Sec user acc: {props.secUser.text.slice(0, 10)}...
 					{props.secUser.text.slice(-5)}
 				</p>
 				<p>
-					User transfer to account balance:{" "}
-					<b>{Number(props.secUser.balance).toFixed(4)}</b> ETH
+					Sec user balance: <b>{Number(props.secUser.balance).toFixed(4)}</b>{" "}
+					ETH
 				</p>
 			</div>
 		) : (
-			<div>⚠️ Set actual user acc!</div>
+			props.secUser.text
 		)}
 	</div>
 );

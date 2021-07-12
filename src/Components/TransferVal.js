@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input, message } from "antd";
+import { Button, Input, Divider, message } from "antd";
 import Web3 from "web3";
 
 const TransferVal = (props) => {
@@ -21,14 +21,16 @@ const TransferVal = (props) => {
 
 	return (
 		<div>
+			<Divider dashed />
 			<p>
 				Transfer value (ETH):
 				<br />
 				<Input
 					placeholder="0,1"
+					maxLength={10}
 					onChange={(e) =>
 						props.setTransactionData({
-							val: e.target.value,
+							val: e.target.value ? e.target.value : 0,
 							gwei: props.transactionData.gwei,
 							showAlert: false,
 						})

@@ -14,14 +14,13 @@ const MainUser = (props) =>
 		</div>
 	) : (
 		<div>
-			<p>✔ Connected!</p>
+			<p>✔ Wallet connected!</p>
 			<p>
-				Ur account hash: {props.mainUser.text.slice(0, 10)}...
+				Ur acc: {props.mainUser.text.slice(0, 10)}...
 				{props.mainUser.text.slice(-5)}
 			</p>
 			<p>
-				Ur account balance: <b>{Number(props.mainUser.balance).toFixed(4)}</b>{" "}
-				ETH
+				Ur balance: <b>{Number(props.mainUser.balance).toFixed(4)}</b> ETH
 			</p>
 		</div>
 	);

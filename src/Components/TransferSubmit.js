@@ -17,7 +17,7 @@ const TransferSubmit = (props) => {
 			message="Transaction submit"
 			description={
 				<span>
-					R u shure whant to send <b>{props.transactionData.val}</b> ETH?
+					Are u shure whant to send <b>{props.transactionData.val}</b> ETH?
 					<br />
 					It will be cost <b>{props.transactionData.gwei}</b> ETH!
 				</span>
@@ -41,13 +41,12 @@ const TransferSubmit = (props) => {
 								props.setTransactionsData
 							)
 						}>
-						Sent
+						Send
 					</Button>
 					<Button
 						className="AlertBtn"
 						size="small"
 						danger
-						type="ghost"
 						onClick={declineTransaction}>
 						Decline
 					</Button>
