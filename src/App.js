@@ -7,6 +7,8 @@ import TransferVal from "./Components/TransferVal";
 import TransferSubmit from "./Components/TransferSubmit";
 import History from "./Components/History";
 
+import gitHub from "./Static/Icons/github.svg";
+
 import getUserData from "./Logic/getUserData";
 import "./App.css";
 
@@ -32,7 +34,10 @@ const App = () => {
 				<p className="Header">
 					👋 Hello!
 					<br />
-					🔄 Im a simple crypto transfer project.
+					<span>
+						<div className="RotateIco">🔄</div> Im a simple crypto transfer
+						project.
+					</span>
 					<Divider dashed />
 				</p>
 				<div className="Container">
@@ -75,6 +80,11 @@ const App = () => {
 
 				<p className="Footer">
 					<Divider dashed />
+					<p>
+						<img src={gitHub} className="gitHub" />{" "}
+						<a href="https://github.com/SEPEZHO/crypto-transfer">GitHub</a>{" "}
+						проекта
+					</p>
 					Created by <a href="https://sepezho.com">sepezho</a> 2021
 				</p>
 			</div>
