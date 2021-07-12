@@ -34,10 +34,7 @@ const App = () => {
 				<p className="Header">
 					👋 Hello!
 					<br />
-					<span>
-						<div className="RotateIco">🔄</div> Im a simple crypto transfer
-						project.
-					</span>
+					🔄 Im a simple crypto transfer project.
 					<Divider dashed />
 				</p>
 				<div className="Container">
